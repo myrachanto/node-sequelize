@@ -1,0 +1,33 @@
+<div class="container"><h1 class="header">Add Shops</h1>
+<div class="shop">
+<form action="/shop" method="POST" class="form-group">
+<label for="name">Name</label>
+ <input type="text" name="name" class="form-control"/>
+ <button class="btn btn-success" type="submit">add shop</button>
+</form></div></div>
+<div class="container">
+<h2 class="header">Shop listing</h2>
+<div class="shops">
+    {{#each shops}}
+    <div class="all coffee">
+        <h2>{{name}}</h2>
+        <form action="/coffee/{{id}}" method="POST" class="form-group">
+         <label for="name">Name</label>
+        <input type="text" name="name" class="form-control"/>
+         <label for="name">type</label>
+        <input type="text" name="flavour" class="form-control"/>
+        <button class="btn btn-success" type="submit">add coffee</button
+        </form>
+        <h3>Coffee listing</h3>
+        {{#each Coffees}}
+        <div class="coffee">
+            <p>{{name}} - {{flavour}} flavor</p>
+        </div>
+        {{else}}
+        <p>Please be the first to add a coffeee!!!!!!</p>
+        {{/each}}
+    </div>
+
+    {{/each}}
+</div>
+</div>
